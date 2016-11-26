@@ -1,6 +1,6 @@
 {
-  "name": "blear.core.storage",
-  "version": "1.0.1",
+  "name": "blear.core._storage",
+  "version": "1.0.2",
   "description": "storage for localStorage/sessionStorage",
   "scripts": {
     "live": "browser-sync start --config bs-config.js",
@@ -29,13 +29,13 @@
     "url": "http://ydr.me"
   },
   "contributors": [],
-  "homepage": "https://github.com/blearjs/blear.core.storage",
+  "homepage": "https://github.com/blearjs/blear.core._storage",
   "repository": {
     "type": "git",
-    "url": "https://github.com/blearjs/blear.core.storage"
+    "url": "https://github.com/blearjs/blear.core._storage"
   },
   "bugs": {
-    "url": "https://github.com/blearjs/blear.core.storage/issues"
+    "url": "https://github.com/blearjs/blear.core._storage/issues"
   },
   "dependencies": {},
   "peerDependencies": {
