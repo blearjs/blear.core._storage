@@ -1,6 +1,7 @@
 /**
  * JSON 格式存储器
  * @author ydr.me
+ * @updated 2016年11月26日16:39:19
  */
 
 
@@ -9,7 +10,8 @@
 
 var json = require('blear.utils.json');
 
-module.exports = function (storage) {
+var win = window;
+var storageBuilder = module.exports = function (storage) {
     var exports = {};
 
 
@@ -146,3 +148,6 @@ module.exports = function (storage) {
 
     return exports;
 };
+
+module.exports.local = storageBuilder(win.localStorage);
+module.exports.session = storageBuilder(win.sessionStorage);

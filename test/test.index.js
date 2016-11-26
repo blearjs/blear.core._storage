@@ -12,23 +12,44 @@ var storage = require('../src/index.js');
 var storageKey1 = 'storageKey1';
 var storageVal1 = {a: 1, b: 2};
 
-describe('测试文件', function () {
-    var sessionStorage = storage(window.sessionStorage);
+describe('.local', function () {
+    var local = storage.local;
 
     it('.set/.get', function () {
-        expect(sessionStorage.set(storageKey1, storageVal1)).toEqual(true);
-        expect(sessionStorage.get(storageKey1)).toEqual(storageVal1);
-        expect(sessionStorage.keys()).toEqual([storageKey1]);
+        expect(local.set(storageKey1, storageVal1)).toEqual(true);
+        expect(local.get(storageKey1)).toEqual(storageVal1);
+        expect(local.keys()).toEqual([storageKey1]);
     });
 
     it('.remove/.size', function () {
-        expect(sessionStorage.size()).toEqual(1);
-        expect(sessionStorage.remove(storageKey1)).toEqual(true);
-        expect(sessionStorage.size()).toEqual(0);
+        expect(local.size()).toEqual(1);
+        expect(local.remove(storageKey1)).toEqual(true);
+        expect(local.size()).toEqual(0);
     });
 
     it('.clear/.size', function () {
-        expect(sessionStorage.clear()).toEqual(true);
-        expect(sessionStorage.size()).toEqual(0);
+        expect(local.clear()).toEqual(true);
+        expect(local.size()).toEqual(0);
+    });
+});
+
+describe('.session', function () {
+    var session = storage.session;
+
+    it('.set/.get', function () {
+        expect(session.set(storageKey1, storageVal1)).toEqual(true);
+        expect(session.get(storageKey1)).toEqual(storageVal1);
+        expect(session.keys()).toEqual([storageKey1]);
+    });
+
+    it('.remove/.size', function () {
+        expect(session.size()).toEqual(1);
+        expect(session.remove(storageKey1)).toEqual(true);
+        expect(session.size()).toEqual(0);
+    });
+
+    it('.clear/.size', function () {
+        expect(session.clear()).toEqual(true);
+        expect(session.size()).toEqual(0);
     });
 });
