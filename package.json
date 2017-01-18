@@ -1,6 +1,6 @@
 {
   "name": "blear.core.storage",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "storage for localStorage/sessionStorage",
   "scripts": {
     "live": "browser-sync start --config bs-config.js",
@@ -10,7 +10,7 @@
   "preferGlobal": false,
   "bin": {},
   "engines": {
-    "node": ">= 4.0.0",
+    "node": ">= 6.0.0",
     "iojs": ">= 1.0.0"
   },
   "main": "src/index.js",
