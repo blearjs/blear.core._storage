@@ -20,17 +20,18 @@ var storageBuilder = module.exports = function (storage) {
 
         try {
             ret = storage.getItem(key);
+            ret = json.safeParse(ret);
         } catch (err) {
-            // ignore
+            ret = {};
         }
 
-        return json.safeParse(ret);
+        return ret.data;
     };
 
 
     var setStorage = function (key, val) {
         try {
-            val = json.safeStringify(val);
+            val = json.safeStringify({data: val, timestamp: Date.now()});
             storage.setItem(key, val);
             return true;
         } catch (err) {
