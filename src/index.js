@@ -22,10 +22,10 @@ var storageBuilder = module.exports = function (storage) {
             ret = storage.getItem(key);
             ret = json.safeParse(ret);
         } catch (err) {
-            ret = {};
+            ret = null;
         }
 
-        return ret.data;
+        return ret && ret.data || null;
     };
 
 
