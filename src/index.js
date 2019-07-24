@@ -131,7 +131,7 @@ var storageBuilder = module.exports = function (storage) {
 
     /**
      * 获取 storage 键
-     * @returns {boolean}
+     * @returns {array}
      */
     exports.keys = function () {
         return getStorageKeys();
@@ -140,7 +140,7 @@ var storageBuilder = module.exports = function (storage) {
 
     /**
      * 获取 storage 容量
-     * @returns {boolean}
+     * @returns {number}
      */
     exports.size = function () {
         return getStorageSize();
